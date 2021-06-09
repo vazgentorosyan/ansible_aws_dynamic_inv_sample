@@ -1,0 +1,14 @@
+  plugin: aws_ec2
+  #aws_profile: default
+  aws_access_key: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          <access key hash>
+  aws_secret_key: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          <secret key hash>
+  regions: 
+    - us-east-1
+  filters:
+    tag:Name: 
+      - web
+    instance-state-name: running
